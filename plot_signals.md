@@ -15,8 +15,7 @@ t = -n_max:0.01:n_max;
 sinusoid = A*cos(2*pi*f*t + theta) + offset;
 
 plot(t,sinusoid) % change to stem for discrete signals
-xlabel('time');
-ylabel('signal');
+xlabel('time');ylabel('signal');
 xlim([-n_max n_max])
 ylim([-A-0.25*A A+0.25*A]) 
 grid; 
@@ -75,15 +74,7 @@ title('Square wave signal');
 Sum signals
 
 ```matlab
-sum_signal = sinusoid + sinusoid_2 + square_wave
-```
-
-```TextOutput
-sum_signal = 1x1001    
-   -3.0000   -2.9842   -2.9372   -2.8596   -2.7526   -2.6180   -2.4579   -2.2748   -2.0717   -1.8516   -1.6180   -1.3748   -1.1256   -0.8744   -0.6252   -0.3820   -0.1484    0.0717    0.2748    0.4579    0.6180    0.7526    0.8596    0.9372    0.9842    1.0000    0.9842    0.9372    0.8596    0.7526    0.6180    0.4579    0.2748    0.0717   -0.1484   -0.3820   -0.6252   -0.8744   -1.1256   -1.3748   -1.6180   -1.8516   -2.0717   -2.2748   -2.4579   -2.6180   -2.7526   -2.8596   -2.9372   -2.9842
-```
-
-```matlab
+sum_signal = sinusoid + sinusoid_2 + square_wave;
 
 plot(t, sum_signal);
 xlabel('time');
