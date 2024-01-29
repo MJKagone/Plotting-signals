@@ -55,13 +55,25 @@ ylim([-A_square-0.25*A_square A_square+0.25*A_square]);
 grid;
 title('Square wave signal');
 %% 
-% Sum signals
+% Define and plot a unit step function
 
-sum_signal = sinusoid + sinusoid_2 + square_wave;
+unit_step = heaviside(t-2);
+
+plot(t,unit_step) % change to stem for discrete signals
+xlabel('time');
+ylabel('signal');
+xlim([-n_max n_max])
+ylim([-A-0.25*A A+0.25*A]) 
+grid; 
+title('Unit step');
+%% 
+% Combine signals
+
+sum_signal = sinusoid .* unit_step; % choose the constituent signals
 
 plot(t, sum_signal);
 xlabel('time');
 ylabel('signal');
 xlim([-n_max n_max]);
 grid;
-title('Sum signal');
+title('Combined signal');
